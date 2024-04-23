@@ -11,7 +11,7 @@ public StepTracker(int goal){
 public void addDailySteps (int Steps){
  totalSteps = totalSteps + Steps;
  totalDays ++;
- if (minSteps <= Steps){
+ if (Steps >= minSteps){
   actDays++;
  }
 }
@@ -19,7 +19,7 @@ public void addDailySteps (int Steps){
   return actDays;
  }
  public double averageSteps(){
-  if(Steps == 0){
+  if(totalDays == 0){
    return 0.0;
   }else{
    return (double)totalSteps/totalDays;
